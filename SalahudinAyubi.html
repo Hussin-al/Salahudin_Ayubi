@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>صلاح الدين والنسب الكوردي</title>
+
+    <!-- خطوط عربية جميلة (يمكنك تغييرها إن أردت) -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet" />
+
+    <style>
+        :root {
+            --bg: #0f172a;
+            --bg-soft: #020617;
+            --card-bg: #020617;
+            --accent: #22c55e;
+            --accent-soft: rgba(34, 197, 94, 0.12);
+            --accent-strong: rgba(34, 197, 94, 0.25);
+            --text-main: #e5e7eb;
+            --text-muted: #9ca3af;
+            --border-subtle: rgba(148, 163, 184, 0.35);
+            --shadow-soft: 0 20px 40px rgba(15, 23, 42, 0.8);
+            --radius-lg: 20px;
+            --radius-xl: 28px;
+            --radius-full: 999px;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            font-family: "Cairo", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            background: radial-gradient(circle at top, #1e293b 0, #020617 45%, #000 100%);
+            color: var(--text-main);
+            display: flex;
+            justify-content: center;
+            padding: 32px 16px;
+        }
+
+        .page {
+            width: 100%;
+            max-width: 980px;
+        }
+
+        .card {
+            background: radial-gradient(circle at top right, rgba(34, 197, 94, 0.07), transparent 55%),
+                radial-gradient(circle at bottom left, rgba(56, 189, 248, 0.06), transparent 50%),
+                var(--card-bg);
+            border-radius: var(--radius-xl);
+            padding: 28px 24px 32px;
+            border: 1px solid var(--border-subtle);
+            box-shadow: var(--shadow-soft);
+            backdrop-filter: blur(18px);
+        }
+
+        @media (min-width: 768px) {
+            .card {
+                padding: 32px 36px 40px;
+            }
+        }
+
+        header {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-bottom: 28px;
+        }
+
+        .badge-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 5px 12px;
+            border-radius: var(--radius-full);
+            border: 1px solid rgba(148, 163, 184, 0.5);
+            background: rgba(15, 23, 42, 0.82);
+            font-size: 13px;
+            color: var(--text-muted);
+        }
+
+        .badge-dot {
+            width: 7px;
+            height: 7px;
+            border-radius: 999px;
+            background: radial-gradient(circle at 30% 30%, #bbf7d0, #22c55e 65%, #166534 100%);
+            box-shadow: 0 0 16px rgba(22, 163, 74, 0.9);
+        }
+
+        h1 {
+            font-size: 1.7rem;
+            margin: 0;
+            line-height: 1.5;
+        }
+
+        @media (min-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+        }
+
+        .subtitle {
+            font-size: 0.96rem;
+            color: var(--text-muted);
+            max-width: 56rem;
+        }
+
+        main {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        section {
+            padding: 18px 18px 20px;
+            border-radius: 18px;
+            background: rgba(15, 23, 42, 0.7);
+            border: 1px solid rgba(51, 65, 85, 0.9);
+        }
+
+        section.highlight {
+            background: radial-gradient(circle at top, rgba(34, 197, 94, 0.12), transparent 55%),
+                rgba(15, 23, 42, 0.85);
+            border-color: var(--accent-strong);
+        }
+
+        section h2 {
+            margin: 0 0 10px;
+            font-size: 1.15rem;
+        }
+
+        section h3 {
+            margin: 10px 0 6px;
+            font-size: 1rem;
+        }
+
+        p {
+            margin: 6px 0;
+            font-size: 0.97rem;
+            line-height: 1.9;
+        }
+
+        .muted {
+            color: var(--text-muted);
+        }
+
+        .hashtag {
+            display: inline-flex;
+            align-items: center;
+            padding: 2px 9px;
+            border-radius: 999px;
+            border: 1px solid rgba(148, 163, 184, 0.45);
+            background: rgba(15, 23, 42, 0.85);
+            font-size: 0.78rem;
+            margin: 0 2px;
+        }
+
+        .hashtag strong {
+            color: var(--accent);
+            margin-inline-start: 4px;
+        }
+
+        .list {
+            margin: 8px 0 10px;
+            padding-inline-start: 18px;
+        }
+
+        .list li {
+            margin: 4px 0;
+            font-size: 0.95rem;
+        }
+
+        .quote {
+            margin: 10px 0;
+            padding: 10px 12px;
+            border-radius: 16px;
+            border: 1px dashed rgba(148, 163, 184, 0.6);
+            background: rgba(15, 23, 42, 0.85);
+            font-size: 0.95rem;
+        }
+
+        .source {
+            font-size: 0.86rem;
+            color: var(--text-muted);
+            margin-top: 4px;
+        }
+
+        .image-grid {
+            margin-top: 10px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 10px;
+        }
+
+        .image-grid img {
+            width: 100%;
+            display: block;
+            border-radius: 16px;
+            border: 1px solid rgba(51, 65, 85, 0.95);
+            background: #020617;
+            object-fit: cover;
+        }
+
+        .footer-note {
+            margin-top: 14px;
+            padding-top: 10px;
+            border-top: 1px dashed rgba(75, 85, 99, 0.8);
+            font-size: 0.92rem;
+            color: var(--text-muted);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="page">
+        <div class="card">
+            <header>
+                <div class="badge-row">
+                    <div class="badge">
+                        <span class="badge-dot"></span>
+                        بحث تاريخي – صلاح الدين الأيوبي
+                    </div>
+                    <div class="badge">
+                        النسب الكوردي ودور الكورد في الدولة الأيوبية
+                    </div>
+                </div>
+
+                <h1>
+                    نبين لكم الكذبة الشهيرة في عدم ادعاء أحد من الأيوبيين النسب الكوردي
+                </h1>
+
+                <p class="subtitle">
+                    توضيح دور نسب صلاح الدين الكوردي في تولي الحكم، ودور الكورد البارز في دولته،
+                    وسبب ادعاء بعض الأيوبيين النسب العربي في أزمنة لاحقة.
+                </p>
+            </header>
+
+            <main>
+
+                <!-- القسم الأول: إثبات النسب الكوردي -->
+                <section class="highlight">
+                    <h2>إثبات النسب الكوردي للأيوبيين</h2>
+
+                    <p>
+                        نقل على لسان المؤرخ المصري المعاصر للدولة الأيوبية، وهو يسأل مباشرة الملك الكامل ابن أخ صلاح
+                        الدين عن نسبه،
+                        فأجابه بكل وضوح أنهم <span class="hashtag">#<strong>أكراد</strong></span>.
+                    </p>
+
+                    <div class="quote">
+                        كتاب كنز الدرر وجامع الغرر، ج ٧، ص ٥
+                    </div>
+
+                    <div class="image-grid">
+                        <img src="/img/GwtEyg9WIAABm2B.jpg" alt="نص من كنز الدرر وجامع الغرر" />
+                    </div>
+                </section>
+
+                <!-- دور النسب الكوردي في تولي الحكم -->
+                <section>
+                    <h2>دور نسب صلاح الدين الكوردي في تولي الحكم</h2>
+
+                    <p>
+                        القصة الشهيرة: بعد موت عم صلاح الدين "شيركو"، وزير الدولة الفاطمية (العاضد آنذاك)،
+                        كان يوجد أربعة أمراء زنكيين لتولي المنصب، ثلاثة منهم من
+                        <span class="hashtag">#<strong>الكورد</strong></span>:
+                    </p>
+
+                    <ul class="list">
+                        <li>علي المشطوب الهكاري</li>
+                        <li>شهاب الدين الحارمي (خال صلاح الدين)</li>
+                        <li>قطب الدين خسرو الهذباني</li>
+                        <li>الياروقي (تركي)</li>
+                    </ul>
+
+                    <p>
+                        لم يقف مع صلاح الدين أحد، ولا سيما أنه كان أصغرهم سنًا وأقلَّهم قوةً وجيشًا.
+                        لكن بذكاء الفقيه عيسى الهكاري استطاع استغلال نسب صلاح الدين
+                        <span class="hashtag">#<strong>الكوردي</strong></span>
+                        ليلتف إليه الأمراء حتى كَبُر شأنه وأصبح ملكًا.
+                    </p>
+
+                    <p class="quote">
+                        لهذا يتبين لنا أنه لولا كُرديته لما استطاع صلاح الدين البقاء في الحكم بوجود الوزراء الأربعة.
+                    </p>
+
+                    <div class="image-grid">
+                        <img src="/img/GwtE7ihW8AAqBeT.jpg" alt="نصوص تاريخية حول تولي صلاح الدين الحكم" />
+                    </div>
+                </section>
+
+                <!-- دور الكورد في دولة صلاح الدين -->
+                <section>
+                    <h2>دور الكورد في دولة صلاح الدين</h2>
+
+                    <p>
+                        جيش صلاح الدين وأمراؤه كانوا
+                        <span class="hashtag">#<strong>الأغلبية الساحقة</strong></span>
+                        من الكورد والأتراك (المماليك).
+                    </p>
+
+                    <p>
+                        بعد تولي صلاح الدين الحكم والقضاء على الدولة الفاطمية، بدَّل الأمراء
+                        <span class="hashtag">#<strong>بالكورد</strong></span>،
+                        وبدّل الجنود العربان والعبيد المصريين بالعساكر الكوردية والتركية (المماليك).
+                    </p>
+
+                    <div class="image-grid">
+                        <img src="/img/GwtFZNRWgAEZjrv.jpg" alt="مراجع عن سيطرة الكورد على المناصب" />
+                        <img src="/img/GwtFZNSWcAAWX7I.jpg" alt="مقاطع أخرى حول الأمراء الكورد" />
+                    </div>
+
+                    <p>
+                        حتى أثناء حروبه، لم يُذكر العرب؛ فقد كان ميمنته من المماليك (أتراك)،
+                        والميسرة والقلب من <span class="hashtag">#<strong>أكراد</strong></span>.
+                    </p>
+
+                    <p>
+                        في معركة فتح عكا مثلاً، كما يذكر وزيره ابن شداد، كانت الميسرة والقلب
+                        من <span class="hashtag">#<strong>الكورد</strong></span>.
+                    </p>
+
+                    <div class="image-grid">
+                        <img src="/img/GwtFfuKWMAAZuy6.jpg" alt="نص ابن شداد حول معركة عكا" />
+                    </div>
+
+                    <p>
+                        وفي معركة حطين، يُذكر قدوم الكورد من آمد وأربيل والموصل واجتماع قادة الكورد كالمشطوب والسمين مع
+                        صلاح الدين
+                        لحصار القدس، وكذلك غضب الأتراك من خطته بعد موافقة الكورد عليها.
+                    </p>
+
+                    <p>
+                        ومن أهم ما يُذكر: أسر الملك الصليبي على يد
+                        <span class="hashtag">#<strong>الكوردي</strong></span> درباس.
+                    </p>
+
+                    <p class="muted">
+                        دور الكورد يطول شرحه، لكن يكفي ما سبق؛ فأين كان دور أعمام صلاح الدين العرب من كل هذا؟
+                    </p>
+
+                    <div class="image-grid">
+                        <img src="/img/GwtFx-fXkAA9tGs.jpg" alt="نصوص حول دور الكورد" />
+                        <img src="/img/GwtFx-WW0AAhyS8.jpg" alt="مراجع تاريخية إضافية" />
+                        <img src="/img/GwtFx-dXwAAXaPw.jpg" alt="تفاصيل حول حطين" />
+                        <img src="/img/GwtFx-bXgAAdYLU.jpg" alt="إسنادات تاريخية" />
+                    </div>
+                </section>
+
+                <!-- ادعاء النسب العربي -->
+                <section>
+                    <h2>سبب ادعاء بعض الأيوبيين النسب العربي</h2>
+
+                    <p>
+                        أولاً: الانتساب للعرب ظهر من الجيل الثالث من الأيوبيين، عندما فقدت الدولة الأيوبية قوتها
+                        ونشأت حروب أهلية بين بني أيوب.
+                    </p>
+
+                    <p>
+                        النسب العربي في الإسلام أفضل من غيره، وبالأخص نسب
+                        <span class="hashtag">#<strong>النبي</strong></span>.
+                        وحتى عندنا، توجد عائلات من الكورد يقولون: نحن من نسل النبي (سيد) ولنا "أوجاغ" (كرامات)
+                        لرفع مكانتهم.
+                    </p>
+
+                    <p>
+                        النسب العربي، وبالأخص القرشي، مهم جدًا سياسيًا بحديث النبي:
+                        «الناس تبع لقريش».
+                    </p>
+
+                    <p>
+                        لذلك نرى – حتى الآن – بعض القادة كـالخميني ومقتدى ونصر الله وغيرهم ينسبون أنفسهم كذبًا للنبي
+                        ليلتف إليهم الناس.
+                    </p>
+
+                    <p>
+                        وهذا ما أكده لنا تقي الدين بقوله:
+                        إن عمي <span class="hashtag">#<strong>صلاح الدين</strong></span>
+                        اجتمع فيه شروط الخلافة عدا النسب
+                        <span class="hashtag">#<strong>القرشي</strong></span>.
+                    </p>
+
+                    <div class="image-grid">
+                        <img src="/img/GwtGJuUWcAATiXb.jpg" alt="كلام تقي الدين حول شروط الخلافة" />
+                    </div>
+
+                    <p>
+                        هذا يعني أن صلاح الدين لم يكن
+                        <span class="hashtag">#<strong>قرشيًا</strong></span>،
+                        أي لم يكن هاشميًا ولا أمويًا.
+                    </p>
+
+                    <p>
+                        وقد ادعى إسماعيل النسب الأموي ونصَّب نفسه خليفة، لكن الملك صلاح الدين وأخاه العادل
+                        <span class="hashtag">#<strong>أنكروا</strong></span> عليه ذلك.
+                    </p>
+
+                    <p>
+                        أما القول بأنهم من غطفان كما رجّحه الحسن بن غريب الحرشي، فهو راوٍ
+                        <span class="hashtag">#<strong>مجهول</strong></span>
+                        ولا توجد له ترجمة كما ذكر ابن خَلِّكان.
+                    </p>
+
+                    <div class="image-grid">
+                        <img src="/img/GwtGaH9WEAAWlB-.jpg" alt="نص يذكر جهل حال الراوي" />
+                        <img src="/img/GwtGaH-X0AEaxpH.jpg" alt="تكملة كلام ابن خلكان" />
+                    </div>
+                </section>
+
+                <!-- رواية ابن شداد والنسب الكوردي -->
+                <section>
+                    <h2>رواية ابن شداد واعتماده على النسب الكوردي</h2>
+
+                    <p>
+                        الجدير بالذكر أن وزير صلاح الدين بهاء الدين ابن شداد الذي نقل نسبه الأموي (والذي قوبل بالإنكار
+                        من قبل صلاح الدين)،
+                        هو بنفسه اعتمد على رواية
+                        <span class="hashtag">#<strong>كورديّة</strong></span>
+                        لبني أيوب.
+                    </p>
+
+                    <p>
+                        فلماذا لم يعترض عليه صلاح الدين كما اعترض على النسب الأموي، مع أن رواية كُرديتهم كانت أشهر،
+                        ولا بد من سماع صلاح الدين بهذا النسب؟
+                    </p>
+
+                    <div class="image-grid">
+                        <img src="/img/GwtGiqfWUAAtCIA.jpg" alt="نص ابن شداد واعتماده على الرواية الكوردية" />
+                    </div>
+                </section>
+
+                <!-- ملاحظات حول النسب وطريقة تدوينه -->
+                <section>
+                    <h2>ملاحظات حول تدوين النسب عند الأيوبيين</h2>
+
+                    <p>
+                        آل أيوب لا يعرفون جدًّا فوق شاذي، وكما هو متعارف، فإن العرب الأقحاح يكتبون أنسابهم جدًّا فوق
+                        جدّ.
+                    </p>
+
+                    <p>
+                        على العكس من الكورد؛ يأخذون – على الأكثر – أربعة أو خمسة أجداد، ثم ينسبون القبيلة لمنطقة معيّنة.
+                        وهذا يُحتمل أن يكون أيضًا دليلًا على عدم عروبتهم.
+                    </p>
+
+                    <p>
+                        كان اسم صلاح الدين: "التكريتي" (نسبةً إلى مكان ولادته).
+                    </p>
+
+                    <div class="image-grid">
+                        <img src="/img/GwtGxSMWgAA6dEb.jpg" alt="نص حول شجرة نسب بني أيوب" />
+                    </div>
+                </section>
+
+                <!-- شبهة اللغة والعادات -->
+                <section>
+                    <h2>الرد على شبهة عدم تحدثه بالكوردية وعدم الاحتفال بنوروز</h2>
+
+                    <p>
+                        أما كلامهم: لماذا لم يتكلم صلاح الدين
+                        <span class="hashtag">#<strong>الكوردية</strong></span>
+                        ولم يحتفل بعيد نوروز ولم يقل
+                        <span class="hashtag">#<strong>هربجي</strong></span>؟
+                    </p>
+
+                    <p>
+                        فالأمر بديهي جدًا؛ صلاح الدين ترعرع في الشام وحلب بين العرب،
+                        وعدا ذلك، فقد كان من بيئة مسلمة محافظة، وأكيد أن التكلم مع جنوده بلغة القرآن أفضل،
+                        مثله مثل باقي القادة الكورد، أي أنه كان "نصف مستعرب".
+                    </p>
+
+                    <p class="quote">
+                        فنسب الأيوبيين العربي كان لمصالح سياسية كما وُضح؛ والأصح أنه كوردي، والله أعلم.
+                    </p>
+
+                    <p class="footer-note">
+                        والسلام عليكم.
+                    </p>
+                </section>
+
+            </main>
+        </div>
+    </div>
+</body>
+
+</html>
